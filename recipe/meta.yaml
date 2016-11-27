@@ -8,6 +8,8 @@ source:
     fn: libjpeg-turbo-{{ version }}.tar.gz
     url: http://downloads.sourceforge.net/project/libjpeg-turbo/{{ version }}/libjpeg-turbo-{{ version }}.tar.gz
     md5: 55deb139b0cac3c8200b75d485fc13f3
+    patches:
+      - Makefile.patch
 
 build:
     number: 0

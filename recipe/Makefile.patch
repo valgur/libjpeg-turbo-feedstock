@@ -1,0 +1,59 @@
+--- Makefile.am
++++ Makefile.am
+@@ -1,4 +1,4 @@
+-lib_LTLIBRARIES = libjpeg.la
++lib_LTLIBRARIES = libjpeg-turbo.la
+ libjpeg_la_LDFLAGS = -version-info ${LIBTOOL_CURRENT}:${SO_MINOR_VERSION}:${SO_AGE} -no-undefined
+ include_HEADERS = jerror.h jmorecfg.h jpeglib.h
+ 
+@@ -102,7 +102,7 @@ noinst_PROGRAMS += tjunittest
+ tjbench_SOURCES = tjbench.c bmp.h bmp.c tjutil.h tjutil.c rdbmp.c rdppm.c \
+ 	wrbmp.c wrppm.c
+ 
+-tjbench_LDADD = libturbojpeg.la libjpeg.la -lm
++tjbench_LDADD = libturbojpeg.la libjpeg-turbo.la -lm
+ 
+ tjbench_CFLAGS = -DBMP_SUPPORTED -DPPM_SUPPORTED
+ 
+@@ -119,7 +119,7 @@ else
+ cjpeg_SOURCES += rdbmp.c rdtarga.c
+ endif
+ 
+-cjpeg_LDADD = libjpeg.la
++cjpeg_LDADD = libjpeg-turbo.la
+ 
+ cjpeg_CFLAGS = -DGIF_SUPPORTED -DPPM_SUPPORTED
+ if WITH_12BIT
+@@ -134,7 +134,7 @@ else
+ djpeg_SOURCES += wrbmp.c wrtarga.c
+ endif
+ 
+-djpeg_LDADD = libjpeg.la
++djpeg_LDADD = libjpeg-turbo.la
+ 
+ djpeg_CFLAGS = -DGIF_SUPPORTED -DPPM_SUPPORTED
+ if WITH_12BIT
+@@ -144,19 +144,19 @@ endif
+ 
+ jpegtran_SOURCES = jpegtran.c rdswitch.c cdjpeg.c transupp.c transupp.h
+ 
+-jpegtran_LDADD = libjpeg.la
++jpegtran_LDADD = libjpeg-turbo.la
+ 
+ rdjpgcom_SOURCES = rdjpgcom.c
+ 
+-rdjpgcom_LDADD = libjpeg.la
++rdjpgcom_LDADD = libjpeg-turbo.la
+ 
+ wrjpgcom_SOURCES = wrjpgcom.c
+ 
+-wrjpgcom_LDADD = libjpeg.la
++wrjpgcom_LDADD = libjpeg-turbo.la
+ 
+ jcstest_SOURCES = jcstest.c
+ 
+-jcstest_LDADD = libjpeg.la
++jcstest_LDADD = libjpeg-turbo.la
+ 
+ dist_man1_MANS = cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
+ 
